@@ -10,33 +10,37 @@
 <body>
     <div class="main">
         <div class="calculator">
-            <div class="display"></div>
+            <div class="display">
+                <div class="previousNumber">321</div>
+                <div class="mathSign">+</div>
+                <div class="currentNumber">123</div>
+            </div>
             <div class="container">
-                <button id="btnPower">x<sup>2</sup></button>
-                <button id="btnClear">C</button>
-                <button id="btnDel">DEL</button>
-                <button id="btnDivide">/</button>
-                <button id="btnSeven">7</button>
-                <button id="btnEight">8</button>
-                <button id="btnNine">9</button>
-                <button id="btnMultiply">*</button>
-                <button id="btnFour">4</button>
-                <button id="btnFive">5</button>
-                <button id="btnSix">6</button>
-                <button id="btnSubtract">-</button>
-                <button id="btnOne">1</button>
-                <button id="btnTwo">2</button>
-                <button id="btnThree">3</button>
-                <button id="btnAdd">+</button>
-                <button id="btnZero">0</button>
-                <button id="btnComma">,</button>
-                <button id="btnEquals">=</button>
+                <button class="operator">x<sup>2</sup></button>
+                <button class="clear">C</button>
+                <button class="delete">DEL</button>
+                <button class="operator">/</button>
+                <button class="btn">7</button>
+                <button class="btn">8</button>
+                <button class="btn">9</button>
+                <button class="operator">*</button>
+                <button class="btn">4</button>
+                <button class="btn">5</button>
+                <button class="btn">6</button>
+                <button class="operator">-</button>
+                <button class="btn">1</button>
+                <button class="btn">2</button>
+                <button class="btn">3</button>
+                <button class="operator">+</button>
+                <button class="btn" id="btnZero">0</button>
+                <button class="btn">,</button>
+                <button class="equals">=</button>
             </div>
         </div>
         <div class="history">
             <div class="historyHeader">
                 <div class="historyTitle">Last Calculations:</div>
-                <button id="clearHistory">Clear history</button>
+                <button class="clearHistory">Clear history</button>
             </div>
             <ul class="historyDisplay">
             </ul>

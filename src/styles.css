@@ -33,6 +33,17 @@ body {
     border-left: 1px solid black;
     border-right: 1px solid black;
     border-radius: 3px;
+    font-size: 14px;
+    word-break: break-all;
+    max-height: min-content;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.currentNumber {
+    font-size: 18px;
 }
 
 .container {
@@ -61,4 +72,5 @@ body {
     flex-direction: column;
     gap: .5rem;
     font-size: 14px;
+    padding-top: 5px;
 }
