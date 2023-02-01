@@ -30,7 +30,19 @@ function displayNumbers() {
 }
 
 function operate() {
-    
+    if (currentNumber.innerHTML === '' && this.textContent === '-') {
+        currentNumber.innerHTML = '-';
+        return;
+    }
+    else if (currentNumber.innerHTML === '') {
+        return;
+    }
+    if (mathSign.innerHTML !== '') {
+        showResult();
+    }
+    previousNumber.innerHTML = currentNumber.innerHTML;
+    mathSign.innerHTML = this.textContent;
+    currentNumber.innerHTML = '';
 }
 
 function showResult() {
