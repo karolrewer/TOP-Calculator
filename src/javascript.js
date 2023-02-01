@@ -12,7 +12,7 @@ const equalsButton = document.querySelector('.equals');
 
 const clearButton = document.querySelector('.clear');
 
-const calculatorHistory = document.querySelector('.history');
+const calculatorHistory = document.querySelector('.historyDisplay');
 
 const historyBtn = document.querySelector('.clearHistory');
 
@@ -84,7 +84,7 @@ function addToHistory() {
 }
 
 function clearHistory() {
-    
+    calculatorHistory.textContent = '';
 }
 
 function clearScreen() {
@@ -95,9 +95,7 @@ function clearScreen() {
 }
 
 
-function clearHistory() {
-    
-}
+
 
 
 
