@@ -30,7 +30,7 @@ function displayNumbers() {
 }
 
 function operate() {
-    if (currentNumber.innerHTML === '' && this.textContent === '-') {
+    if (currentNumber.innerHTML === '' && mathSign.innerHTML === '' && this.textContent === '-') {
         currentNumber.innerHTML = '-';
         return;
     }
@@ -40,13 +40,47 @@ function operate() {
     if (mathSign.innerHTML !== '') {
         showResult();
     }
-    previousNumber.innerHTML = currentNumber.innerHTML;
-    mathSign.innerHTML = this.textContent;
-    currentNumber.innerHTML = '';
+    previousNumber.innerHTML = currentNumber.innerHTML === '-' ? '' : currentNumber.innerHTML;
+    mathSign.innerHTML = currentNumber.innerHTML === '-' ? '' : this.textContent;
+    currentNumber.innerHTML = currentNumber.innerHTML === '-' ? '-' : '';
 }
 
 function showResult() {
+    if (previousNumber.innerHTML === '' || currentNumber.innerHTML === '') return;
 
+    let a = Number(currentNumber.innerHTML);
+    let b = Number(previousNumber.innerHTML);
+    let operator = mathSign.innerHTML;
+
+    switch (operator) {
+        case '+':
+        result = a + b;
+        break;
+        case '-':
+        result = b - a;
+        break;
+        case '*':
+        result = a * b;
+        break;
+        case '/':
+        result = b / a;
+        break;
+        case 'x^':
+        result = b ** a;
+        break;
+    }
+
+    addToHistory();
+    currentNumber.innerHTML = result;
+    previousNumber.innerHTML = '';
+    mathSign.innerHTML = '';
+}
+
+function addToHistory() {
+    const newHistoryItem = document.createElement('li');
+    newHistoryItem.innerHTML = `${currentNumber.innerHTML} ${mathSign.innerHTML} ${previousNumber.innerHTML} = ${result}`
+    newHistoryItem.classList.add('historyItem');
+    calculatorHistory.appendChild(newHistoryItem);
 }
 
 function clearScreen() {
