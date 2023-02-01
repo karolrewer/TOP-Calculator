@@ -12,6 +12,8 @@ const equalsButton = document.querySelector('.equals');
 
 const clearButton = document.querySelector('.clear');
 
+const deleteButton = document.querySelector('.delete');
+
 const calculatorHistory = document.querySelector('.historyDisplay');
 
 const historyBtn = document.querySelector('.clearHistory');
@@ -94,7 +96,9 @@ function clearScreen() {
     mathSign.innerHTML = '';
 }
 
-
+function deleteLast() {
+    currentNumber.innerHTML = currentNumber.innerHTML.toString().slice(0, -1);
+}
 
 
 
@@ -125,3 +129,5 @@ numbersButtons.forEach((button) => {
 });
 
 historyBtn.addEventListener('click', clearHistory);
+
+deleteButton.addEventListener('click', deleteLast);
