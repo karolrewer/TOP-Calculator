@@ -83,8 +83,15 @@ function addToHistory() {
     calculatorHistory.appendChild(newHistoryItem);
 }
 
-function clearScreen() {
+function clearHistory() {
+    
+}
 
+function clearScreen() {
+    result = '';
+    currentNumber.innerHTML = '';
+    previousNumber.innerHTML = '';
+    mathSign.innerHTML = '';
 }
 
 
